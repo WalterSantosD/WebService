@@ -1,0 +1,42 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from WSOpecacaoService WSDL service -->
+
+  <service name="WSOpecacao" provider="java:RPC" style="document" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://hellows.com.br"/>
+      <parameter name="wsdlServiceElement" value="WSOpecacaoService"/>
+      <parameter name="schemaQualified" value="http://hellows.com.br"/>
+      <parameter name="wsdlServicePort" value="WSOpecacao"/>
+      <parameter name="className" value="br.com.hellows.WSOpecacaoSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="WSOpecacao"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="divide" qname="divide" returnQName="retNS:divideReturn" xmlns:retNS="http://hellows.com.br" returnType="rtns:int" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:num01" xmlns:pns="http://hellows.com.br" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:num02" xmlns:pns="http://hellows.com.br" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="soma" qname="soma" returnQName="retNS:somaReturn" xmlns:retNS="http://hellows.com.br" returnType="rtns:int" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:num03" xmlns:pns="http://hellows.com.br" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:num04" xmlns:pns="http://hellows.com.br" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="subtrai" qname="subtrai" returnQName="retNS:subtraiReturn" xmlns:retNS="http://hellows.com.br" returnType="rtns:int" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:num05" xmlns:pns="http://hellows.com.br" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:num06" xmlns:pns="http://hellows.com.br" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="multiplica" qname="multiplica" returnQName="retNS:multiplicaReturn" xmlns:retNS="http://hellows.com.br" returnType="rtns:int" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:num07" xmlns:pns="http://hellows.com.br" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:num08" xmlns:pns="http://hellows.com.br" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <parameter name="allowedMethods" value="soma multiplica subtrai divide"/>
+
+  </service>
+</deployment>

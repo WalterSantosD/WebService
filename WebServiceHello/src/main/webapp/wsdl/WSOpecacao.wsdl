@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://hellows.com.br" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://hellows.com.br" xmlns:intf="http://hellows.com.br" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://hellows.com.br" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="num01" type="xsd:int"/>
+   <element name="num02" type="xsd:int"/>
+   <element name="divideReturn" type="xsd:int"/>
+   <element name="num03" type="xsd:int"/>
+   <element name="num04" type="xsd:int"/>
+   <element name="somaReturn" type="xsd:int"/>
+   <element name="num05" type="xsd:int"/>
+   <element name="num06" type="xsd:int"/>
+   <element name="subtraiReturn" type="xsd:int"/>
+   <element name="num07" type="xsd:int"/>
+   <element name="num08" type="xsd:int"/>
+   <element name="multiplicaReturn" type="xsd:int"/>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="somaRequest">
+
+      <wsdl:part element="impl:num03" name="num01">
+
+      </wsdl:part>
+
+      <wsdl:part element="impl:num04" name="num02">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="divideResponse">
+
+      <wsdl:part element="impl:divideReturn" name="divideReturn">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="somaResponse">
+
+      <wsdl:part element="impl:somaReturn" name="somaReturn">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="divideRequest">
+
+      <wsdl:part element="impl:num01" name="num01">
+
+      </wsdl:part>
+
+      <wsdl:part element="impl:num02" name="num02">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="multiplicaResponse">
+
+      <wsdl:part element="impl:multiplicaReturn" name="multiplicaReturn">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="subtraiResponse">
+
+      <wsdl:part element="impl:subtraiReturn" name="subtraiReturn">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="subtraiRequest">
+
+      <wsdl:part element="impl:num05" name="num01">
+
+      </wsdl:part>
+
+      <wsdl:part element="impl:num06" name="num02">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="multiplicaRequest">
+
+      <wsdl:part element="impl:num07" name="num01">
+
+      </wsdl:part>
+
+      <wsdl:part element="impl:num08" name="num02">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="WSOpecacao">
+
+      <wsdl:operation name="divide" parameterOrder="num01 num02">
+
+         <wsdl:input message="impl:divideRequest" name="divideRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:divideResponse" name="divideResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="soma" parameterOrder="num01 num02">
+
+         <wsdl:input message="impl:somaRequest" name="somaRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:somaResponse" name="somaResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="subtrai" parameterOrder="num01 num02">
+
+         <wsdl:input message="impl:subtraiRequest" name="subtraiRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:subtraiResponse" name="subtraiResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="multiplica" parameterOrder="num01 num02">
+
+         <wsdl:input message="impl:multiplicaRequest" name="multiplicaRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:multiplicaResponse" name="multiplicaResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="WSOpecacaoSoapBinding" type="impl:WSOpecacao">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="divide">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="divideRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="divideResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="soma">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="somaRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="somaResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="subtrai">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="subtraiRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="subtraiResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="multiplica">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="multiplicaRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="multiplicaResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="WSOpecacaoService">
+
+      <wsdl:port binding="impl:WSOpecacaoSoapBinding" name="WSOpecacao">
+
+         <wsdlsoap:address location="http://localhost:8080/WebServiceHello/services/WSOpecacao"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
